@@ -59,9 +59,10 @@ else:
     # allow the creation of an Index
     index = VectorStoreIndex([], storage_context=storage_context)
 
-    all_teams_df = pd.read_csv("/Users/sinanasa/llm/baseball_data/lahman/lahman_1871-2023_csv/TeamsFranchises.csv", encoding = "utf-8")
-    all_players_df = pd.read_csv("/Users/sinanasa/llm/baseball_data/lahman/lahman_1871-2023_csv/People.csv", encoding = "ISO-8859-1")
-    all_games_df = pd.read_csv("/Users/sinanasa/llm/baseball_data/lahman/lahman_1871-2023_csv/Appearances.csv", encoding = "utf-8")
+    # all_teams_df = pd.read_csv("/Users/sinanasa/llm/baseball_data/lahman/lahman_1871-2023_csv/TeamsFranchises.csv", encoding = "utf-8")
+    all_teams_df = pd.read_csv("source_data/TeamsFranchises.csv", encoding="utf-8")
+    all_players_df = pd.read_csv("source_data/People.csv", encoding = "ISO-8859-1")
+    all_games_df = pd.read_csv("source_data/Appearances.csv", encoding = "utf-8")
 
     add_df_to_sql_database("all_team_data", all_teams_df, engine)
     add_df_to_sql_database("all_player_data", all_players_df, engine)
