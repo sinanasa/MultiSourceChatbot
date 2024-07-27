@@ -21,6 +21,7 @@ from llama_index.core.vector_stores import MetadataInfo, VectorStoreInfo
 model = "gpt-4"
 chunk_size = 2048
 
+# in-memory db, next: change this to mySql
 engine = create_engine("sqlite+pysqlite:///:memory:", future=True)
 # engine = create_engine('mysql+pymydsql://sinanasa@localhost/mydb')
 
